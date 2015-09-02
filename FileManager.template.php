@@ -26,24 +26,12 @@ function template_filemanager_above()
 	echo'
 						</td>
 					</tr>
-				</table><br/>';
-
-	// This will only be visible if they're using an outdated version.
-	echo'
-		<p id="newVersion" class="errorbox" style="display: none;">
-			', sprintf($txt['fm_outdated'],$context['fm_curVer']), '
-		</p>';
-
-	echo'
+				</table><br/>
 			</div>
 			<span class="lowerframe"><span></span></span>';
 
 	// Navigation
 	echo template_button_strip($context['nav_buttons']),'<br/><br/>';
-
-	// Version check
-	echo $context['check_version'];
-
 	}
 }
 
