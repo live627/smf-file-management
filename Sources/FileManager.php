@@ -100,29 +100,6 @@ function FileManager()
 		'pl' => 'perl',
 	);
 
-	// This checks for the latest version.
-	$context['check_version'] = '
-		<script language="JavaScript" type="text/javascript" src="http://forentadatorerna.se/filemanager_latestversion.js"></script>
-		<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
-			function getLatestVersion()
-			{
-				var latVer, curVer;
-				if (typeof(window.latestVersion) != "string")
-					return;
-				latVer = document.getElementById("latestVersion");
-				curVer = document.getElementById("currentVersion");
-				setInnerHTML(latVer, window.latestVersion);
-				var currentVersion = getInnerHTML(curVer);
-				if (currentVersion != window.latestVersion)
-				{
-					setInnerHTML(curVer, "<span class=\"alert\">" + currentVersion + "<" + "/span>");
-					setInnerHTML(latVer, "<span style=\"color: green\">" + latestVersion + "<" + "/span>");
-					document.getElementById("newVersion").style.display="block";
-				}
-			}
-			getLatestVersion();
-		// ]]></script>';
-
 	// Html headers
 	$context['html_headers'] .= '
 	<script type="text/javascript" src="' . $settings['default_theme_url'] . '/filemanager/highslide.js"></script>
