@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE package-info SYSTEM "http://www.simplemachines.org/xml/package-info">
+<package-info xmlns="http://www.simplemachines.org/xml/package-info" xmlns:smf="http://www.simplemachines.org/">
+	<id>Nas:File_Manager</id>
+	<name>The SMF File Management Tool</name>
+	<version>1.0.1</version>
+	<type>modification</type>
+	<install for="2.0-2.99.99">
+		<readme parsebbc="true">readme.txt</readme>	
+		<modification>install2.0.xml</modification>
+		<require-dir name="Sources" destination="$boarddir" />
+		<require-file name="FileManager.template.php" destination="$themedir" />		
+		<require-dir name="filemanager" destination="$themedir" />		
+		<require-dir name="languages" destination="$themedir" />	
+		<require-dir name="images" destination="$themedir" />		
+		<require-file name="process.php" destination="$boarddir" />		
+		<redirect url="?action=admin;area=filemanager">redirect.txt</redirect>					
+	</install>
+    <uninstall for="2.0-2.99.99">
+		<readme type="inline">This will uninstall the SMF File Management Tool. Thanks for using this mod.</readme>	
+		<modification reverse="true">install2.0.xml</modification>	
+		<remove-file name="$sourcedir/FileManager.php" />
+		<remove-filr name="$sourcedir/Subs-FileManager.php" />
+		<remove-file name="$themedir/FileManager.template.php" />		
+		<remove-file name="$languagedir/FileManager.english.php" />	
+		<remove-file name="$languagedir/FileManager.portuguese_brazilian.php" />	
+		<remove-file name="$languagedir/FileManager.portuguese_pt.php" />			
+		<remove-file name="$languagedir/FileManager.turkish.php" />				
+		<remove-file name="$imagesdir/admin/filemanager.png" />			
+		<remove-dir name="$themedir/filemanager/" />		
+		<remove-dir name="$imagesdir/filemanager/" />	
+		<remove-file name="$boarddir/process.php" />			
+    </uninstall>	
+</package-info>	

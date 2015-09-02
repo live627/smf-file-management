@@ -1,0 +1,23 @@
+#loading
+{
+	display: none;
+	padding: 10px;
+	margin: auto;
+	margin-bottom: 10px;
+}
+#result
+{
+	display: none;
+	padding: 10px;
+}
+#result a:link, a:visited, a:hover
+{
+	color: #000000;
+	text-decoration: none;
+}
+#uploadprocess
+{
+	width: 0;
+	height: 0;
+	border: 0px solid #fff;
+}

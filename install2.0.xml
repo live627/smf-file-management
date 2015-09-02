@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE modification SYSTEM "http://www.simplemachines.org/xml/modification">
+<modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
+	<id>Nas:File_Manager</id>
+	<version>1.0.1</version>
+	
+			<!-- Source files -->
+	<file name="$sourcedir/Admin.php">
+		<operation>
+			<search position="before"><![CDATA[loadLanguage('Admin');]]></search>
+			<add><![CDATA[loadLanguage('FileManager');]]></add>
+		</operation>
+		<operation>
+			<search position="after"><![CDATA['repairboards' => array(]]></search>
+			<add><![CDATA['filemanager' => array(
+					'label' => $txt['fm_adminbutton'],
+					'file' => 'FileManager.php',
+					'function' => 'FileManager',
+					'icon' => 'filemanager.png',
+				),
+				
+]]></add>
+		</operation>	
+	</file>
+	<file name="$sourcedir/Subs.php">
+		<operation>
+			<search position="replace"><![CDATA[						'show' => allowedTo('manage_permissions'),
+					),]]></search>
+			<add><![CDATA[						'show' => allowedTo('manage_permissions'),
+					),
+					'filemanager' => array(
+						'title' => $txt['fm_adminbutton'],
+						'href' => $scripturl . '?action=admin;area=filemanager',
+						'show' => allowedTo('admin_forum'),
+					),]]></add>
+		</operation>
+		<operation>
+			<search position="before"><![CDATA[$cacheTime = $modSettings['lastActive'] * 60;]]></search>
+			<add><![CDATA[
+	// File manager.
+	loadLanguage('FileManager');]]></add>
+		</operation>		
+	</file>	
+</modification>

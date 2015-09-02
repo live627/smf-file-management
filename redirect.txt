@@ -1,0 +1,5 @@
+You have succesfully installed The SMF File Management Tool!<br>
+Please report any bugs you may encounter.<br>
+Feature requests are most welcome!<br>
+<br>
+You will now be redirected to the file manager...<br>
